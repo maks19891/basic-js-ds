@@ -1,4 +1,4 @@
-// const { NotImplementedError } = require('../extensions/index.js');
+const { NotImplementedError } = require('../extensions/index.js');
 
 const { Node } = require('../extensions/list-tree.js');
 
@@ -7,6 +7,9 @@ const { Node } = require('../extensions/list-tree.js');
 * using Node from extensions
 */
 class BinarySearchTree {
+  constructor() {
+    this.head = null;
+  }
 
   root() {
     // throw new NotImplementedError('Not implemented');
@@ -18,7 +21,7 @@ class BinarySearchTree {
     }
   }
 
-  add(/* data */) {
+  add(data) {
     // throw new NotImplementedError('Not implemented');
     // remove line with error and write your code here
     this.head = addNode(this.head, data);
@@ -38,7 +41,7 @@ class BinarySearchTree {
     }
   }
 
-  has(/* data */) {
+  has(data) {
     // throw new NotImplementedError('Not implemented');
     // remove line with error and write your code here
     return hasNode(this.head, data);
@@ -58,7 +61,7 @@ class BinarySearchTree {
     }
   }
 
-  find(/* data */) {
+  find(data) {
     // throw new NotImplementedError('Not implemented');
     // remove line with error and write your code here
     return findNode(this.head, data)
@@ -77,7 +80,7 @@ class BinarySearchTree {
     }
   }
 
-  remove(/* data */) {
+  remove(data) {
     // throw new NotImplementedError('Not implemented');
     // remove line with error and write your code here
     this.head = removeNode(this.head, data)
@@ -111,9 +114,7 @@ class BinarySearchTree {
         }
 
         node.data = minNode.data;
-
         node.right = removeNode(node.right, minNode.data)
-
         return node
 
       }
